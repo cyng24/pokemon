@@ -7,3 +7,9 @@
 .line-2 {
   line-height: 2;
 }
+
+button {
+  border: none;
+  padding: 5px 25px;
+  margin: 5px;
+}

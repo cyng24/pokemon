@@ -13,7 +13,7 @@ const ListItem = (props) => {
   });
   useEffect(()=>{
     if(props) {
-      fetch(props.item.url, {
+      fetch(props.url, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
       })
@@ -29,7 +29,7 @@ const ListItem = (props) => {
   return (
     <button className="border-0" onClick={onClick}> 
       { showData
-        ? <img className="w-100 h-100" src={data.sprites.front_default} alt={props.item.name}/>
+        ? <img className="w-100 h-100" src={data.sprites.front_default} alt={data.name}/>
         : <div className="d-block line-2">
             <div>#{data.id}</div>
             <div className="text-capitalize">{data.name}</div>
