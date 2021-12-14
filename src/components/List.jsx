@@ -43,8 +43,8 @@ export default class List extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="grid justify-content-center m-5">
+      <div class="m-5">
+        <div className="list-width justify-content-center m-auto">
           {this.state.pokemon.map((item, index) => {
             return <ListItem key={index} url={item.url}/>
           }

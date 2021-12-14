@@ -1,15 +1,27 @@
-.grid {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, 16vw);
-}
-
-.line-2 {
-  line-height: 2;
-}
-
 button {
   border: none;
   padding: 5px 25px;
   margin: 5px;
+  overflow: hidden;
+  transition: max-height 1s linear;
+  max-height: 300px;
+}
+
+.closed {
+  max-height: 35px;
+}
+
+.list-width {
+  width: 50%;
+}
+
+.stats {
+  text-align: left;
+  line-height: 2;
+}
+
+@media (max-width: 750px) {
+  .list-width {
+    width: 100%;
+  }
 }

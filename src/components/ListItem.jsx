@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './layout.css';
 
 const ListItem = (props) => {
-  const [showData, toggleShow] = useState(true);
+  const [hideData, toggleShow] = useState(" closed");
   const onClick = () => {
-    toggleShow(!showData);
+    let newValue = hideData.length ? "" : " closed";
+    toggleShow(newValue);
   }
 
   const [data, setData] = useState({
@@ -27,16 +28,16 @@ const ListItem = (props) => {
   }, []);
 
   return (
-    <button className="border-0" onClick={onClick}> 
-      { showData
-        ? <img className="w-100 h-100" src={data.sprites.front_default} alt={data.name}/>
-        : <div className="d-block line-2">
-            <div>#{data.id}</div>
-            <div className="text-capitalize">{data.name}</div>
-            <div>{data.typeString}</div>
-            <div>{data.weight} lbs</div>
+    <button className={"w-100 border-0" + hideData} onClick={onClick}> 
+      <div className="text-capitalize">{data.name}</div>
+      <div className="d-flex">
+        <img className="w-50" src={data.sprites.front_default} alt={data.name}/>
+        <div className="m-auto stats">
+            <div>ID: {data.id}</div>
+            <div>TYPE: {data.typeString}</div>
+            <div>WEIGHT: {data.weight} lbs</div>
         </div>
-      }
+      </div>
     </button>
   )
 };
