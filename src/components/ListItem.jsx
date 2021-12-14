@@ -28,7 +28,7 @@ const ListItem = (props) => {
   }, []);
 
   return (
-    <button className={"w-100 border-0" + hideData} onClick={onClick}> 
+    <button className={"border-0" + hideData} onClick={onClick}> 
       <div className="text-capitalize">{data.name}</div>
       <div className="d-flex">
         <img className="w-50" src={data.sprites.front_default} alt={data.name}/>
