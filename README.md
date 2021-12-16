@@ -8,6 +8,7 @@
 </h1>
 
 To view the project, go to https://pokemon.gatsbyjs.io/
+<br />
 To view the code, go to https://github.com/cyng24/pokemon
 
 ## 🚀 Quick start
@@ -22,7 +23,7 @@ To view the code, go to https://github.com/cyng24/pokemon
 
     ```shell
     cd pokemon/
-    npm install
+    npm install or yarn install
     ```
 
 1.  **Build it locally.**

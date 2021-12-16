@@ -20,7 +20,9 @@ const ListItem = (props) => {
       })
       .then(res => res.json())
       .then((data) => {
-        data.typeString = data.types.map((type) => type.type.name).join(', ');
+          data.typeString = data.types.length > 0 
+            ? data.types.map((type) => type.type.name).join(', ')
+            : 'none';
         setData(data)
       })
       .catch(console.error);
@@ -29,7 +31,7 @@ const ListItem = (props) => {
 
   return (
     <button className={"border-0" + hideData} onClick={onClick}> 
-      <div className="text-capitalize">{data.name}</div>
+      <div className="text-capitalize">{props.name}</div>
       <div className="d-flex">
         <img className="w-50" src={data.sprites.front_default} alt={data.name}/>
         <div className="m-auto stats">

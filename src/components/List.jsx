@@ -36,7 +36,7 @@ export default class List extends React.Component {
     })
     .then(res => res.json())
     .then((data) => {
-      this.setState({ pokemon: data.results });
+      this.setState({ pokemon: data.results || [] });
     })
     .catch(console.error);
   }
@@ -44,11 +44,10 @@ export default class List extends React.Component {
   render() {
     return (
       <div class="m-5">
-        <div className="d-grid list-width justify-content-center m-auto">
+        <div className="d-grid list-width justify-content-center m-auto"> 
           {this.state.pokemon.map((item, index) => {
-            return <ListItem key={index} url={item.url}/>
-          }
-          )}
+            return <ListItem key={index} name={item.name} url={item.url}/>
+          })}
         </div>
         <div className="d-flex justify-content-center m-5">
           <button onClick={() => this.changePage(-1)}>Back</button>
