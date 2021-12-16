@@ -50,8 +50,8 @@ export default class List extends React.Component {
           })}
         </div>
         <div className="d-flex justify-content-center m-5">
-          <button onClick={() => this.changePage(-1)}>Back</button>
-          <button onClick={() => this.changePage(1)}>Next</button>
+          { this.state.page > 0 && (<button onClick={() => this.changePage(-1)}>Back</button>) }
+          { this.state.pokemon.length > 0 && (<button onClick={() => this.changePage(1)}>Next</button>) }
         </div>
       </div>
     )
