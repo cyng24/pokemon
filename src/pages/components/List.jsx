@@ -1,5 +1,5 @@
 import React from 'react';
-import ListItem from './ListItem.jsx';
+import { Link } from 'gatsby';
 import './layout.css';
 
 const CONST_LIMIT = 25;
@@ -43,10 +43,14 @@ export default class List extends React.Component {
 
   render() {
     return (
-      <div class="m-5">
-        <div className="d-grid list-width justify-content-center m-auto"> 
+      <div className="m-5">
+        <div className="d-grid justify-content-center m-auto"> 
           {this.state.pokemon.map((item, index) => {
-            return <ListItem key={index} name={item.name} url={item.url}/>
+            return (
+              <Link className="list-button" to={item.url.split('v2')[1]} key={index}>
+                <div className="text-capitalize">{item.name}</div>
+              </Link>
+            )
           })}
         </div>
         <div className="d-flex justify-content-center m-5">
