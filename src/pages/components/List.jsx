@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import './layout.css';
 
-const CONST_LIMIT = 25;
+const CONST_LIMIT = 20;
 const CONST_API = `https://pokeapi.co/api/v2/pokemon?limit=${CONST_LIMIT}&offset=`;
 
 export default class List extends React.Component {
